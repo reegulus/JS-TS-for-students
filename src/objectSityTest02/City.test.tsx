@@ -14,7 +14,8 @@ beforeEach(() => {
                     street: {
                         title: "White street"
                     }
-                }},
+                }
+            },
             {
                 buildedAt: 2008,
                 repaired: false,
@@ -25,16 +26,49 @@ beforeEach(() => {
                     }
                 }
             },
-            {buildedAt: 2020,
+            {
+                buildedAt: 2020,
                 repaired: false,
                 address: {
                     number: 100,
                     street: {
                         title: "Lucky street"
                     }
-                }}
+                }
+            }
         ],
-        governmentBuilding: [],
+        governmentBuilding: [
+            {
+                types: "Hospital",
+                budget: 200000,
+                staffCount: 200,
+                address: {
+                    street: {
+                        title: "Sount Str"
+                    }
+                }
+            },
+            {
+                types: "Fire-Stattion",
+                budget: 500000,
+                staffCount: 2000,
+                address: {
+                    street: {
+                        title: "Central Str"
+                    }
+                }
+            },
+            {
+                types: "Police",
+                budget: 4500000,
+                staffCount: 2340,
+                address: {
+                    street: {
+                        title: "Sunny Str"
+                    }
+                }
+            },
+        ],
         cityzensNumber: 1000000
     }
 })
@@ -59,5 +93,20 @@ test("test city should contains 3 houses", () => {
 })
 
 test("test city should contains hospital and fire station", () => {
+    expect(city.governmentBuilding.length).toBe(3)
 
+    expect(city.governmentBuilding[0].types).toBe("Hospital")
+    expect(city.governmentBuilding[0].budget).toBe(200000)
+    expect(city.governmentBuilding[0].staffCount).toBe(200)
+    expect(city.governmentBuilding[0].address.street.title).toBe("Sount Str")
+
+    expect(city.governmentBuilding[1].types).toBe("Fire-Stattion")
+    expect(city.governmentBuilding[1].budget).toBe(500000)
+    expect(city.governmentBuilding[1].staffCount).toBe(2000)
+    expect(city.governmentBuilding[1].address.street.title).toBe("Central Str")
+
+    expect(city.governmentBuilding[2].types).toBe("Police")
+    expect(city.governmentBuilding[2].budget).toBe(4500000)
+    expect(city.governmentBuilding[2].staffCount).toBe(2340)
+    expect(city.governmentBuilding[2].address.street.title).toBe("Sunny Str")
 })
