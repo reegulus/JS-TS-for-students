@@ -1,9 +1,9 @@
 
 type AddressType = {
     streetTitle: string
-    city: CityType
+    city: CityTitleType
 }
-type CityType = {
+type CityTitleType = {
     title: string
     countryTitle: string
 }
