@@ -1,5 +1,5 @@
-import {StudentType} from "../objects02/Objects";
-import {addSkill, doesStudentLiveIn, makeStudentActive} from "./function03";
+import {StudentType} from "../objects-02/Objects";
+import {addSkill, doesStudentLiveIn, makeStudentActive} from "./Function03";
 
 let student: StudentType
 beforeEach(() => {

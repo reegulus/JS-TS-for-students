@@ -1,4 +1,4 @@
-import {student, StudentType} from "../objects02/Objects";
+import {student, StudentType} from "../objects-02/Objects";
 
 export const sum = (a: number, b: number) => {
     return a + b
