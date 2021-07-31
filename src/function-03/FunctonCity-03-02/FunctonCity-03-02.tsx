@@ -30,3 +30,15 @@ export type CityType = {
     governmentBuilding: Array<BuildingType>
     cityzensNumber: number
 }
+
+export function addMoneyToBudget(buildingType: BuildingType, budget: number) {
+    buildingType.budget += budget
+}
+
+export function repairHouse (houseType: HouseType) {
+    houseType.repaired = true
+}
+
+export function toFireStaff () {
+
+}
