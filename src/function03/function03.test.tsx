@@ -1,12 +1,12 @@
 import {StudentType} from "../objects02/Objects";
-import {addSkill} from "./function03";
+import {addSkill, makeStudentActive} from "./function03";
 
 let student: StudentType
 beforeEach(() => {
     student = {
         name: "Jon",
         age: 25,
-        active: true,
+        active: false,
         address: {
             streetTitle: "Surganova 2",
             city: {
@@ -33,4 +33,11 @@ test("new tech skill should be added student", () => {
     expect(student.technologies[3].id).toBeDefined()
 
 
+})
+
+test("student should be made active", () => {
+    expect(student.active).toBe(false)
+    makeStudentActive(student)
+
+    expect(student.active).toBe(true)
 })
