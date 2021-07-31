@@ -1,4 +1,3 @@
-
 export type StreetType = {
     title: string
 }
@@ -28,17 +27,21 @@ export type CityType = {
     title: string
     houses: Array<HouseType>
     governmentBuilding: Array<BuildingType>
-    cityzensNumber: number
+    cityZensNumber: number
 }
 
 export function addMoneyToBudget(buildingType: BuildingType, budget: number) {
     buildingType.budget += budget
 }
 
-export function repairHouse (houseType: HouseType) {
+export function repairHouse(houseType: HouseType) {
     houseType.repaired = true
 }
 
-export function toFireStaff () {
+export function toFireStaff(buildingType: BuildingType, staffCount: number) {
+    buildingType.staffCount -= staffCount
+}
 
+export function toHireStaff(buildingType: BuildingType, staffCount: number) {
+    buildingType.staffCount += staffCount
 }

@@ -1,4 +1,4 @@
-import {addMoneyToBudget, CityType, repairHouse, toFireStaff} from "./FunctonCity-03-02";
+import {addMoneyToBudget, CityType, repairHouse, toFireStaff, toHireStaff} from "./FunctonCity-03-02";
 
 let city: CityType;
 
@@ -59,7 +59,7 @@ beforeEach(() => {
                 }
             }
         ],
-        cityzensNumber: 1000000
+        cityZensNumber: 1000000
     }
 })
 
@@ -83,9 +83,19 @@ test("House should be repared", () => {
 })
 
 test("Staff should be increased", () => {
-    toFireStaff(city.governmentBuilding[0].staffCount, 20)
+    toFireStaff(city.governmentBuilding[0], 20)
+    toFireStaff(city.governmentBuilding[1], 20)
 
     expect(city.governmentBuilding[0].staffCount).toBe(180)
+    expect(city.governmentBuilding[1].staffCount).toBe(1980)
+})
+
+test("Staff should be repared", () => {
+    toHireStaff(city.governmentBuilding[0], 20)
+    toHireStaff(city.governmentBuilding[1], 20)
+
+    expect(city.governmentBuilding[0].staffCount).toBe(220)
+    expect(city.governmentBuilding[1].staffCount).toBe(2020)
 })
 
 
