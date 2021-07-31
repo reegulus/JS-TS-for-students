@@ -89,7 +89,7 @@ test("Staff should be increased", () => {
     expect(city.governmentBuilding[0].staffCount).toBe(180)
     expect(city.governmentBuilding[1].staffCount).toBe(1980)
 })
-
+//отремонтировать
 test("Staff should be repared", () => {
     toHireStaff(city.governmentBuilding[0], 20)
     toHireStaff(city.governmentBuilding[1], 20)

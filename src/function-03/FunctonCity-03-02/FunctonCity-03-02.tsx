@@ -45,3 +45,5 @@ export function toFireStaff(buildingType: BuildingType, staffCount: number) {
 export function toHireStaff(buildingType: BuildingType, staffCount: number) {
     buildingType.staffCount += staffCount
 }
+
+
