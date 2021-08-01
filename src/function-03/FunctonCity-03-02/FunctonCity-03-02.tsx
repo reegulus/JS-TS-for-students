@@ -46,4 +46,9 @@ export function toHireStaff(buildingType: BuildingType, staffCount: number) {
     buildingType.staffCount += staffCount
 }
 
+export function createMessage(city: CityType) {
+    // return "Hello " + city.title + " city. I want you be happy. All " + city.cityZensNumber
+    return `Hello ${city.title} city. I want you be happy. All ${city.cityZensNumber}`
+}
+
 

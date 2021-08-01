@@ -1,4 +1,4 @@
-import {addMoneyToBudget, CityType, repairHouse, toFireStaff, toHireStaff} from "./FunctonCity-03-02";
+import {addMoneyToBudget, CityType, createMessage, repairHouse, toFireStaff, toHireStaff} from "./FunctonCity-03-02";
 
 let city: CityType;
 
@@ -97,5 +97,12 @@ test("Staff should be repared", () => {
     expect(city.governmentBuilding[0].staffCount).toBe(220)
     expect(city.governmentBuilding[1].staffCount).toBe(2020)
 })
+
+test("Greeting should be correct for city", () => {
+    const message = createMessage(city)
+
+    expect(message).toBe("Hello New York city. I want you be happy. All 1000000")
+})
+
 
 
