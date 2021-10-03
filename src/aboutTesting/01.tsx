@@ -6,5 +6,6 @@ export function multi(a: number, b: number) {
 }
 
 export function splitIntoWords(sentens: string) {
-    return ['hello', 'my', 'friend']
+    return sentens.toLowerCase().split(' ')
+        .map(w => w.replace("!", ""))
 }
