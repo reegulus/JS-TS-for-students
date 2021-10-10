@@ -12,11 +12,11 @@ type UniversityType = {
     adressTitle: AdressTitleType
 
 }
-type AdressType = {
+export type AdressType = {
     city: string
     countriTitle: string
 }
-type StudentType = {
+export type StudentType = {
     id: number
     name: string
     age: number
@@ -52,12 +52,9 @@ const student: StudentType = {
             id: 2,
             title: "Css"
         },{
-            id: 1,
+            id: 3,
             title: "React"
-        },{
-            id: 1,
-            title: "JavaScript"
-        },
+        }
 
     ]
 }

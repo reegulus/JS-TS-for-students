@@ -87,7 +87,7 @@ beforeEach(() => {
 
     })
 
-    test("test city should contains hospital andd fire station", () => {
+    test("test city should contains hospital and fire station", () => {
         expect(city.governmentBuilding.length).toBe(2)
 
         expect(city.governmentBuilding[0].type).toBe("Hospital")
