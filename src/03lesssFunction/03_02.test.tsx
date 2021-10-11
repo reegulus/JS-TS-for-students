@@ -1,5 +1,6 @@
 import {CityType} from "../02LessObjects/02_test02";
-import {addMoneyToBudget, repairedHouse, toFireStaff, toHireStaff} from "./03Func";
+import {addMoneyToBudget, createMessage, repairedHouse, toFireStaff, toHireStaff} from "./03Func";
+import {create} from "domain";
 
 let city: CityType
 
@@ -87,7 +88,6 @@ test("House should be repaired", () => {
 
     expect(city.houses[1].repaired).toBeTruthy()
 })
-
 test("staff should be increased", () => {
     toFireStaff(city.governmentBuilding[0], 20)
 
@@ -97,4 +97,9 @@ test("staff should be repaired", () => {
     toHireStaff(city.governmentBuilding[1], 20)
 
     expect(city.governmentBuilding[1].staffCount).toBe(2020)
+})
+test("Greet message should be correct for city", () => {
+   const message = createMessage(city)
+
+    expect(message).toBe("Hello New York")
 })
