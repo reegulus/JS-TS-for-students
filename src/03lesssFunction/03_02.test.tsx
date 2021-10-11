@@ -1,5 +1,5 @@
 import {CityType} from "../02LessObjects/02_test02";
-import {addMoneyToBudget} from "./03Func";
+import {addMoneyToBudget, repairedHouse, toFireStaff, toHireStaff} from "./03Func";
 
 let city: CityType
 
@@ -75,4 +75,26 @@ test("Budget should be changed for Fire-Station", () => {
     addMoneyToBudget(city.governmentBuilding[1], -100000)
 
     expect(city.governmentBuilding[1].budget).toBe(400000)
+})
+// test.skip("Houses should be destroyed", () => {
+//     demolishHouseOnTheStreet(city, "Happy street")
+//
+//     expect(city.governmentBuilding.length).toBe(1)
+//     expect(city.governmentBuilding[0].id).toBe(1)
+// })
+test("House should be repaired", () => {
+    repairedHouse(city.houses[1])
+
+    expect(city.houses[1].repaired).toBeTruthy()
+})
+
+test("staff should be increased", () => {
+    toFireStaff(city.governmentBuilding[0], 20)
+
+    expect(city.governmentBuilding[0].staffCount).toBe(180)
+})
+test("staff should be repaired", () => {
+    toHireStaff(city.governmentBuilding[1], 20)
+
+    expect(city.governmentBuilding[1].staffCount).toBe(2020)
 })
