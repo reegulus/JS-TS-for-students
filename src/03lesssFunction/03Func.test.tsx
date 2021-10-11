@@ -1,5 +1,5 @@
 import {StudentType} from '../02LessObjects/02'
-import {addSkill, madeStudentActive} from "./03Func";
+import {addSkill, livesStudentCountry, madeStudentActive} from "./03Func";
 
 let student: StudentType
 
@@ -50,9 +50,11 @@ test("new tech skill should be added to student", () => {
 test("student should be made active", () => {
     expect(student.isActive).toBe(false)
     madeStudentActive(student)
-
-
     expect(student.isActive).toBe(true)
-
-
+})
+test("student should be lives in the country", () => {
+    let res1 = livesStudentCountry(student, "Moscow")
+    let res2 = livesStudentCountry(student, "Belarus")
+    expect(res1).toBe(false)
+    expect(res2).toBe(true)
 })
