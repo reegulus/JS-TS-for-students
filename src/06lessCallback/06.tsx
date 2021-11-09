@@ -1,27 +1,22 @@
-import React, {ChangeEventHandler, FocusEventHandler} from "react";
+import React, {MouseEvent} from "react";
 
 export const Users = () => {
 
-    const deleteUsers = () => {
-        console.log("user have been deleted")
+    const onChangeHandler = () => {
+        console.log('change processed')
     }
-    const saveUsers = () => {
-        console.log("user have been saved")
-    }
-    const onBlurHandler = (event: FocusEventHandler<HTMLTextAreaElement>) => {
+    const onBlurHandler = () => {
         console.log('focus processed')
     }
-    const onChangeHandler = (event: ChangeEventHandler<HTMLTextAreaElement>) => {
-        console.log('change processed')
+    const deleteUsers = (event: MouseEvent<HTMLButtonElement>) => {
+        console.log(event.currentTarget.value)
     }
     return (
         <div>
             <h2>Dimych</h2>
             <textarea onChange={onChangeHandler} onBlur={onBlurHandler}></textarea>
-            <input type="text"/>
-            <input type="number"/>
-            <button onClick={deleteUsers}>save</button>
-            <button onClick={saveUsers}>delete</button>
+            <button name={"deleted"} onClick={deleteUsers}>x</button>
+            <button name={"save"} onClick={deleteUsers}>x</button>
         </div>
         )
 
